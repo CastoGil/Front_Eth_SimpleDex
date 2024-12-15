@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SimpleDEX</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>SimpleDEX</h1>
+
+      <!-- Botón para conectar wallet -->
+      <button id="connect-wallet">Conectar Wallet</button>
+      <p id="wallet-address">Wallet no conectada</p>
+      <p id="balance">Balance ETH: 0</p>
+      <!-- Obtener Precios -->
+      <section>
+        <h2>Obtener Precios</h2>
+        <button id="get-price-token-a">Obtener Precio de TokenA</button>
+        <p id="price-token-a">Precio TokenA: 0</p>
+
+        <button id="get-price-token-b">Obtener Precio de TokenB</button>
+        <p id="price-token-b">Precio TokenB: 0</p>
+      </section>
+
+      <!-- Agregar Liquidez -->
+      <section>
+        <h2>Agregar Liquidez *(only owner)</h2>
+        <label for="liquidity-a">Cantidad de TokenA:</label>
+        <input
+          type="text"
+          id="liquidity-a"
+          placeholder="Introduce cantidad de TokenA"
+        />
+        <label for="liquidity-b">Cantidad de TokenB:</label>
+        <input
+          type="text"
+          id="liquidity-b"
+          placeholder="Introduce cantidad de TokenB"
+        />
+        <button id="add-liquidity">Agregar Liquidez</button>
+      </section>
+
+      <!-- Retirar Liquidez -->
+      <section>
+        <h2>Retirar Liquidez *(only owner)</h2>
+        <label for="remove-a">Cantidad de TokenA:</label>
+        <input
+          type="text"
+          id="remove-a"
+          placeholder="Introduce cantidad de TokenA"
+        />
+        <label for="remove-b">Cantidad de TokenB:</label>
+        <input
+          type="text"
+          id="remove-b"
+          placeholder="Introduce cantidad de TokenB"
+        />
+        <button id="remove-liquidity">Retirar Liquidez</button>
+      </section>
+
+      <!-- Intercambiar Tokens -->
+      <section>
+        <h2>Intercambiar Tokens</h2>
+        <!-- Intercambiar TokenA por TokenB -->
+        <h3>TokenA por TokenB</h3>
+        <label for="amount-a">Cantidad de TokenA:</label>
+        <input
+          type="text"
+          id="amount-a"
+          placeholder="Introduce cantidad de TokenA"
+        />
+        <button id="swap-a-to-b">Intercambiar TokenA por TokenB</button>
+        <!-- Intercambiar TokenB por TokenA -->
+        <h3>TokenB por TokenA</h3>
+        <label for="amount-b">Cantidad de TokenB:</label>
+        <input
+          type="text"
+          id="amount-b"
+          placeholder="Introduce cantidad de TokenB"
+        />
+        <button id="swap-b-to-a">Intercambiar TokenB por TokenA</button>
+      </section>
+      <!-- Sección de salida -->
+      <div id="output"></div>
+    </div>
+
+    <!-- Inclusión de librerías y scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
